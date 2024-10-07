@@ -78,16 +78,7 @@ export default function Admin() {
           />
         </label>
         <br />
-        {/* <label>
-          Öğrenci ID:
-          <input
-            type="number"
-            name="student_id"
-            value={formData.student_id}
-            onChange={handleChange}
-          />
-        </label>
-        <br /> */}
+        
 
         <br />
         <label>
