@@ -1,5 +1,5 @@
 "use client";
-
+import "../globals.css";
 import { useEffect, useState } from "react";
 
 export default function Home() {
