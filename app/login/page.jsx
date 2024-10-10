@@ -20,8 +20,8 @@ export default function LoginPage() {
         required
         placeholder="Şifre"
       />
-      <button formAction={login}>Log in</button>
-      <button formAction={signup}>Sign up</button>
+      <button formAction={login}>Giriş Yap</button>
+      <button formAction={signup}>Kayıt Ol</button>
     </form>
     <div className="intro-container">
       <h2>Hoş Geldiniz !</h2>
