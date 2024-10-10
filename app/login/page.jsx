@@ -20,8 +20,8 @@ export default function LoginPage() {
         required
         placeholder="Şifre"
       />
-      <button formAction={login}>Log in</button>
-      <button formAction={signup}>Sign up</button>
+      <button formAction={login}>Giriş Yap</button>
+      <button formAction={signup}>Kayıt Ol</button>
     </form>
     <div className="intro-container">
       <h2>Hoş Geldiniz !</h2>
@@ -29,7 +29,7 @@ export default function LoginPage() {
       Yönetim paneline erişim sağlamak için lütfen giriş yapın.
       Eğer bir hesabınız yoksa, yeni bir yönetici hesabı oluşturabilirsiniz.
       </p>
-      <button>No account yet? Signup.</button>
+      <button>Üye değil misiniz?</button>
       </div>
     </div>
   );
