@@ -78,7 +78,6 @@ export default function Admin() {
           />
         </label>
         <br />
-        
 
         <br />
         <label>
