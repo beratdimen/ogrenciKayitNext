@@ -2,6 +2,7 @@
 import { AddNote } from "@/actions/students";
 import { createClient } from "@/utils/supabase/client";
 import { useEffect, useState, useRef } from "react";
+import TableHead from "./tableHead";
 
 export default function StudentsTable() {
   const [students, setStudents] = useState([]);
@@ -70,16 +71,7 @@ export default function StudentsTable() {
       <h1>Kayıtlı Öğrenciler</h1>
       <button onClick={() => handleLogout()}>Çıkış Yap</button>
       <table>
-        <thead>
-          <tr>
-            <th>Ad</th>
-            <th>Soyad</th>
-            <th>Vize-1</th>
-            <th>Vize-2</th>
-            <th>Final</th>
-            <th>Ortalama</th>
-          </tr>
-        </thead>
+        <TableHead />
         <tbody>
           {students.length > 0 ? (
             students.map((student) => (
