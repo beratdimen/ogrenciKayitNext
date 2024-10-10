@@ -4,6 +4,7 @@ import { createClient } from "@/utils/supabase/client";
 import { useEffect, useState, useRef } from "react";
 import TableHead from "./tableHead";
 import { AddIcon, DeleteIcon } from "@/helpers/icons";
+import { toast } from "sonner";
 
 export default function StudentsTable() {
   const [students, setStudents] = useState([]);
@@ -71,6 +72,7 @@ export default function StudentsTable() {
   }, []);
 
   const handleLogout = async () => {
+    toast.success("Çıkış Yapıldı");
     await supabase.auth.signOut();
     window.location.reload(false);
   };
@@ -88,7 +90,7 @@ export default function StudentsTable() {
       .insert([formObj])
       .select();
     if (data) {
-      alert("eklendi");
+      toast.success("Öğrenci Eklendi");
     }
     closeStudentModal();
     fetchStudents();
@@ -96,9 +98,9 @@ export default function StudentsTable() {
 
   async function handleDelete(id) {
     const { error } = await supabase.from("students").delete().eq("id", id);
-
+    !confirm;
     if (!error) {
-      alert("silindi");
+      toast.error("Öğrenci Silindi");
     }
     fetchStudents();
   }
