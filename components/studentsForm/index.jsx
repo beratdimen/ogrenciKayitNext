@@ -191,9 +191,9 @@ export default function StudentsTable() {
         <form onSubmit={handleSubmit}>
           <input type="text" placeholder="İsim" name="first_name" />
           <input type="text" placeholder="Soyad" name="last_name" />
-          <input type="text" placeholder="Vize1" name="vize1" />
-          <input type="text" placeholder="Vize2" name="vize2" />
-          <input type="text" placeholder="Final" name="final" />
+          <input type="number" placeholder="Vize1" name="vize1" />
+          <input type="number" placeholder="Vize2" name="vize2" />
+          <input type="number" placeholder="Final" name="final" />
           <button>Kaydet</button>
         </form>
       </dialog>
