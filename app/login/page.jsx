@@ -29,7 +29,8 @@ export default function LoginPage() {
       Yönetim paneline erişim sağlamak için lütfen giriş yapın.
       Eğer bir hesabınız yoksa, yeni bir yönetici hesabı oluşturabilirsiniz.
       </p>
-      <button>Üye değil misiniz?</button>
+      <p>Üye değil misiniz?</p>
+      <a href="/signup">Hemen kayıt olun</a>
       </div>
     </div>
   );
