@@ -9,7 +9,7 @@ export default function IntroLogin() {
         hesabınız yoksa, yeni bir yönetici hesabı oluşturabilirsiniz.
       </p>
       <p>Üye değil misiniz?</p>
-      <Link href="/yokki">Hemen kayıt olun</Link>
+      <Link href="/sign-up">Hemen kayıt olun</Link>
     </div>
   );
 }

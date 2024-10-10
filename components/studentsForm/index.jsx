@@ -3,6 +3,7 @@ import { AddNote } from "@/actions/students";
 import { createClient } from "@/utils/supabase/client";
 import { useEffect, useState, useRef } from "react";
 import TableHead from "./tableHead";
+import { AddIcon, DeleteIcon } from "@/helpers/icons";
 
 export default function StudentsTable() {
   const [students, setStudents] = useState([]);
@@ -10,8 +11,20 @@ export default function StudentsTable() {
   const [not, setNot] = useState();
   const [selectedStudent, setSelectedStudent] = useState(null);
   const [selectedNot, setSelectedNot] = useState(null);
-
+  const addStudentModal = useRef();
   const modalref = useRef();
+
+  const openStudentModal = () => {
+    if (addStudentModal) {
+      addStudentModal.current.showModal();
+    }
+  };
+
+  const closeStudentModal = () => {
+    if (addStudentModal) {
+      addStudentModal.current.close();
+    }
+  };
 
   const openDialog = (id, notName) => {
     setSelectedStudent(id);
@@ -66,10 +79,37 @@ export default function StudentsTable() {
     return <p>Yükleniyor...</p>;
   }
 
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const formObj = Object.fromEntries(new FormData(e.target));
+    console.log(formObj);
+    const { data, error } = await supabase
+      .from("students")
+      .insert([formObj])
+      .select();
+    if (data) {
+      alert("eklendi");
+    }
+    closeStudentModal();
+    fetchStudents();
+  }
+
+  async function handleDelete(id) {
+    const { error } = await supabase.from("students").delete().eq("id", id);
+
+    if (!error) {
+      alert("silindi");
+    }
+    fetchStudents();
+  }
+
   return (
     <div>
       <h1>Kayıtlı Öğrenciler</h1>
       <button onClick={() => handleLogout()}>Çıkış Yap</button>
+      <button onClick={() => openStudentModal()}>
+        <AddIcon />
+      </button>
       <table>
         <TableHead />
         <tbody>
@@ -83,7 +123,7 @@ export default function StudentsTable() {
                     student.vize1
                   ) : (
                     <button onClick={() => openDialog(student.id, "vize1")}>
-                      Not Ekle
+                      <AddIcon />
                     </button>
                   )}
                 </td>
@@ -92,7 +132,7 @@ export default function StudentsTable() {
                     student.vize2
                   ) : (
                     <button onClick={() => openDialog(student.id, "vize2")}>
-                      Not Ekle
+                      <AddIcon />
                     </button>
                   )}
                 </td>
@@ -101,7 +141,7 @@ export default function StudentsTable() {
                     student.final
                   ) : (
                     <button onClick={() => openDialog(student.id, "final")}>
-                      Not Ekle
+                      <AddIcon />
                     </button>
                   )}
                 </td>
@@ -110,6 +150,11 @@ export default function StudentsTable() {
                     (student.vize1 + student.vize2 + student.final) /
                     3
                   ).toFixed(2)}
+                </td>
+                <td>
+                  <button onClick={() => handleDelete(student.id)}>
+                    <DeleteIcon />
+                  </button>
                 </td>
               </tr>
             ))
@@ -140,6 +185,17 @@ export default function StudentsTable() {
         <button onClick={closeDialog} className="closeButton">
           x
         </button>
+      </dialog>
+
+      <dialog ref={addStudentModal}>
+        <form onSubmit={handleSubmit}>
+          <input type="text" placeholder="İsim" name="first_name" />
+          <input type="text" placeholder="Soyad" name="last_name" />
+          <input type="text" placeholder="Vize1" name="vize1" />
+          <input type="text" placeholder="Vize2" name="vize2" />
+          <input type="text" placeholder="Final" name="final" />
+          <button>Kaydet</button>
+        </form>
       </dialog>
     </div>
   );

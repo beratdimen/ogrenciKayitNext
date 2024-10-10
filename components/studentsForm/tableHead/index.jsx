@@ -8,6 +8,7 @@ export default function TableHead() {
         <th>Vize-2</th>
         <th>Final</th>
         <th>Ortalama</th>
+        <th>Actions</th>
       </tr>
     </thead>
   );
