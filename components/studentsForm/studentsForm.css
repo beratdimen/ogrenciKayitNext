@@ -14,24 +14,24 @@ th, td {
   font-size: 16px;
 }
 
-/* Başlık hücreleri */
+
 th {
   background-color: #4CAF50;
   color: white;
   font-weight: bold;
 }
 
-/* Satırların üzerine gelindiğinde arka plan rengi değişsin */
+
 tr:hover {
   background-color: #f1f1f1;
 }
 
-/* Alternatif satırların rengini değiştir */
+
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-/* Buton stili */
+
 button {
   padding: 10px 20px;
   background-color: #4CAF50;
@@ -44,13 +44,12 @@ button {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Butona hover efekti */
 button:hover {
   background-color: #45a049;
   transform: translateY(-2px);
 }
 
-/* Close (Kapat) butonu */
+
 .closeButton {
   background-color: red;
   color: white;
@@ -65,14 +64,14 @@ button:hover {
   background-color: darkred;
 }
 
-/* Yükleniyor yazısı için ikon stili */
+
 .fas {
   margin-right: 8px;
   color: #4CAF50;
   font-size: 20px;
 }
 
-/* Dialog kutusu için stil */
+
 dialog {
   border: none;
   padding: 20px;
@@ -80,14 +79,40 @@ dialog {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color: #fff;
   width: 300px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  z-index: 10;
+}
+
+dialog input[type="number"],
+dialog button {
+  display: block;
+  margin: 10px auto;
+  width: 80%; 
 }
 
 input[type="number"] {
-  width: 100%;
   padding: 10px;
-  margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box;
   font-size: 16px;
+  box-sizing: border-box;
+}
+
+
+dialog button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+dialog button:hover {
+  background-color: #45a049;
 }
