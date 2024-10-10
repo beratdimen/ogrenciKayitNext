@@ -3,6 +3,7 @@ import { AddNote } from "@/actions/students";
 import { createClient } from "@/utils/supabase/client";
 import { useEffect, useState, useRef } from "react";
 import TableHead from "./tableHead";
+import "./studentsForm.css";
 
 export default function StudentsTable() {
   const [students, setStudents] = useState([]);
@@ -63,7 +64,9 @@ export default function StudentsTable() {
   };
 
   if (loading) {
-    return <p>Yükleniyor...</p>;
+    return <p>
+      <i className="fas fa-spinner fa-spin"></i>Yükleniyor...
+      </p>;
   }
 
   return (
