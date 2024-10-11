@@ -1,10 +1,24 @@
-import { signup } from "@/app/login/actions";
+import { signUp, signup } from "@/app/login/actions";
 
 export default function SignUpForm() {
   return (
     <div className="SignUpContainer">
       <h2>Kayıt Formu</h2>
       <form>
+        <input
+          id="firstName"
+          name="firstName"
+          type="text"
+          required
+          placeholder="Ad"
+        />
+        <input
+          id="lastName"
+          name="lastName"
+          type="text"
+          required
+          placeholder="Soyad"
+        />
         <input
           id="email"
           name="email"
@@ -19,7 +33,7 @@ export default function SignUpForm() {
           required
           placeholder="Password"
         />
-        <button formAction={signup}>Kaydet</button>
+        <button formAction={signUp}>Kaydet</button>
       </form>
     </div>
   );

@@ -42,6 +42,7 @@ export default function StudentsTable() {
     setSelectedNot(null);
     setNot(null);
   };
+
   const supabase = createClient();
 
   const fetchStudents = async () => {
