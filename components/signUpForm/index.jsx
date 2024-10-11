@@ -3,7 +3,7 @@ import { signup } from "@/app/login/actions";
 export default function SignUpForm() {
   return (
     <div className="SignUpContainer">
-      <h2>Öğrenci KAyıt Formu</h2>
+      <h2>Kayıt Formu</h2>
       <form>
         <input
           id="email"
