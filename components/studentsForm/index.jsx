@@ -97,8 +97,14 @@ export default function StudentsTable() {
   }
 
   async function handleDelete(id) {
+    const isConfirmed = confirm(
+      "Bu öğrenciyi silmek istediğinizden emin misiniz?"
+    );
+
+    if (!isConfirmed) {
+      return;
+    }
     const { error } = await supabase.from("students").delete().eq("id", id);
-    !confirm;
     if (!error) {
       toast.error("Öğrenci Silindi");
     }
@@ -147,11 +153,20 @@ export default function StudentsTable() {
                     </button>
                   )}
                 </td>
-                <td>
+                <td
+                  className={
+                    (student.vize1 + student.vize2 + student.final) / 3 < 50
+                      ? "stayed"
+                      : "passed"
+                  }
+                >
                   {(
                     (student.vize1 + student.vize2 + student.final) /
                     3
                   ).toFixed(2)}
+                  {(student.vize1 + student.vize2 + student.final) / 3 < 50
+                    ? " - Daha Çok Çalış"
+                    : " - Başarılar"}
                 </td>
                 <td>
                   <button onClick={() => handleDelete(student.id)}>
@@ -190,6 +205,7 @@ export default function StudentsTable() {
       </dialog>
 
       <dialog ref={addStudentModal}>
+        <h2>Öğnreci Kayıt Formu</h2>
         <form onSubmit={handleSubmit}>
           <input type="text" placeholder="İsim" name="first_name" />
           <input type="text" placeholder="Soyad" name="last_name" />

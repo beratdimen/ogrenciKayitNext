@@ -41,6 +41,14 @@ td {
   background-color: #fff;
 }
 
+.stayed {
+  color: red;
+}
+
+.passed {
+  color: #4caf50;
+}
+
 @media (max-width: 600px) {
   body {
     padding: 10px;
