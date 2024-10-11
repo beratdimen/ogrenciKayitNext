@@ -95,7 +95,7 @@
 }
 
 @media (max-width: 768px) {
-  .bbb {
+  .loginPanel {
     .loginContainer {
       flex-direction: column;
       form,
