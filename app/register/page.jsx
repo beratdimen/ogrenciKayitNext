@@ -1,5 +1,3 @@
-import { signup } from "@/api/user";
-
 export default function RegisterPage() {
   return (
     <form>
@@ -73,7 +71,6 @@ export default function RegisterPage() {
       </label>
       <br />
       <br />
-      <button formAction={signup}>Sign up</button>
     </form>
   );
 }
