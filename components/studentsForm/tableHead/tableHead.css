@@ -1,0 +1,60 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  transition: background-color 0.3s ease;
+  text-transform: capitalize;
+}
+
+th {
+  background-color: #4caf50; /* Başlık arka plan rengi */
+  color: white; /* Başlık yazı rengi */
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: #f1f1f1; /* Satır hover efekti */
+}
+
+td {
+  background-color: #fff; /* Hücre arka plan rengi */
+}
+
+.stayed {
+  color: red; /* Kaldı durumu için kırmızı */
+}
+
+.passed {
+  color: #4caf50; /* Geçti durumu için yeşil */
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px; /* Küçük ekranlarda padding azaltma */
+  }
+
+  table {
+    font-size: 14px; /* Küçük ekranlar için yazı boyutu */
+  }
+}
