@@ -3,9 +3,7 @@ import { UserIcon } from "@/helpers/icons";
 import { createClient } from "@/utils/supabase/client";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
-import '../studentsForm/studentsForm.css';
-
-
+import "./students.css";
 
 export default function StudentsPage() {
   const supabase = createClient();
