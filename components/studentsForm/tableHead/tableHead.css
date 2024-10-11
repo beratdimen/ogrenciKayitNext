@@ -18,43 +18,45 @@ table {
   margin-top: 20px;
 }
 
-th,
-td {
+.tableRow {
+  background-color: #4caf50; 
+}
+
+.tableHeader {
   border: 1px solid #ddd;
   padding: 10px;
   text-align: left;
   transition: background-color 0.3s ease;
-  text-transform: capitalize;
-}
-
-th {
-  background-color: #4caf50; /* Başlık arka plan rengi */
-  color: white; /* Başlık yazı rengi */
+  color: white; 
   font-weight: bold;
 }
 
 tr:hover {
-  background-color: #f1f1f1; /* Satır hover efekti */
+  background-color: #f1f1f1; 
 }
 
 td {
-  background-color: #fff; /* Hücre arka plan rengi */
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  background-color: #fff; 
+  transition: background-color 0.3s ease;
 }
 
 .stayed {
-  color: red; /* Kaldı durumu için kırmızı */
+  color: red; 
 }
 
 .passed {
-  color: #4caf50; /* Geçti durumu için yeşil */
+  color: #4caf50; 
 }
 
 @media (max-width: 600px) {
   body {
-    padding: 10px; /* Küçük ekranlarda padding azaltma */
+    padding: 10px;
   }
 
   table {
-    font-size: 14px; /* Küçük ekranlar için yazı boyutu */
+    font-size: 14px; 
   }
 }

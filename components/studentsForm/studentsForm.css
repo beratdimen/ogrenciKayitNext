@@ -1,18 +1,60 @@
-/* Genel stil ayarları */
-body {
+.body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   margin: 0;
   padding: 20px;
 }
 
-/* Başlık stili */
-h1 {
+.h1 {
   color: #333;
 }
 
-/* Tablo stili */
-table {
+h2 {
+  color: #555;
+}
+
+
+.button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+
+.student-card {
+  background-color: white;
+  padding: 15px;
+  margin: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center; 
+}
+
+
+.student-card p {
+  margin-left: 10px;
+}
+
+
+.no-students {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #777;
+}
+
+
+.table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
@@ -33,12 +75,11 @@ th {
   color: white;
 }
 
-/* Satır stil ayarları */
-tr:hover {
+.tr:hover {
   background-color: #f1f1f1;
 }
 
-/* Not stili */
+
 .passed {
   color: green;
   font-weight: bold;
@@ -47,85 +88,4 @@ tr:hover {
 .stayed {
   color: red;
   font-weight: bold;
-}
-
-/* Buton stili */
-button {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 15px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  display: flex; /* Iconları yan yana dizmek için */
-  align-items: center;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-/* Icon stili */
-button svg {
-  margin-right: 5px; /* Icon ve metin arasındaki boşluk */
-}
-
-/* Dialog stil ayarları */
-dialog {
-  border: none;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: #fff;
-  width: 300px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-}
-
-/* Dialog içindeki input ve butonların ortalanması */
-dialog input[type="number"],
-dialog input[type="text"],
-dialog button {
-  display: block;
-  margin: 10px auto;
-  width: 80%; /* Genişlik ayarı */
-}
-
-/* Input stilini iyileştirmek */
-input[type="number"],
-input[type="text"] {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  box-sizing: border-box;
-}
-
-/* Gönder butonuna daha hoş bir stil ekleyelim */
-dialog button {
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
-}
-
-dialog button:hover {
-  background-color: #45a049;
-}
-
-/* Kapatma butonu için stil */
-.closeButton {
-  background-color: red;
-}
-
-.closeButton:hover {
-  background-color: darkred;
 }
