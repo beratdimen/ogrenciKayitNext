@@ -10,7 +10,8 @@
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Formu yukarıya hizaladık */
+  padding-top: 50px;
 }
 
 .SignUpContainer form {
@@ -28,13 +29,17 @@
 .SignUpContainer h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #059669;
+  color: white; /* Yazı rengi beyaz yapıldı */
+  padding: 10px;
+  background-color: #69bea3; /* Yeşil arka plan rengi */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .SignUpContainer input {
   width: 100%;
   padding: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   border: none;
   background-color: #f3f4f6;
   border-radius: 5px;
@@ -44,16 +49,17 @@
 .SignUpContainer button {
   width: 100%;
   padding: 15px;
-  background-color: #059669;
+  background-color:#438e76;
   color: white;
   border: none;
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
+  margin-top: 10px; /* Buton ile inputlar arasında boşluk */
 }
 
 .SignUpContainer button:hover {
-  background-color: #047857;
+  background-color: #316153;
 }
 
 @media (max-width: 768px) {
