@@ -5,6 +5,8 @@ import { useEffect, useState, useRef } from "react";
 import TableHead from "./tableHead";
 import { AddIcon, DeleteIcon } from "@/helpers/icons";
 import { toast } from "sonner";
+import './studentsForm.css';
+ 
 
 export default function StudentsTable() {
   const [students, setStudents] = useState([]);
