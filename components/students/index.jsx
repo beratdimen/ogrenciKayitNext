@@ -38,7 +38,9 @@ export default function StudentsPage() {
             <UserIcon />
             <p>{student.first_name}</p>
             <p>{student.last_name}</p>
-            <p>{student.email}</p>
+            <p>
+              {((student.vize1 + student.vize2 + student.final) / 3).toFixed(2)}
+            </p>
           </div>
         ))
       ) : (
