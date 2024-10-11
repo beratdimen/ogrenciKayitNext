@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.SignUpContainer {
+  font-family: "Poppins", sans-serif;
+  background-color: #ddd;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SignUpContainer form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.SignUpContainer h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #059669;
+}
+
+.SignUpContainer input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: none;
+  background-color: #f3f4f6;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.SignUpContainer button {
+  width: 100%;
+  padding: 15px;
+  background-color: #059669;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.SignUpContainer button:hover {
+  background-color: #047857;
+}
+
+@media (max-width: 768px) {
+  .SignUpContainer form {
+    width: 100%;
+  }
+}
